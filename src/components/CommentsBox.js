@@ -3,7 +3,13 @@ import React, { Component } from 'react';
 class CommentsBox extends Component {
    render() {
       return (
-         <h1>Comments Box</h1>
+         <form>
+            <h4>Add a Comment</h4>
+            <textarea />
+            <div>
+               <button>Submit</button>
+            </div>
+         </form>
       );
    }
 }
