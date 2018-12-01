@@ -1,14 +1,17 @@
 import React from 'react';
-import {
-   mount
-} from 'enzyme'
+import { mount } from 'enzyme'
 
+import Root from '../../Root';
 import CommentsBox from '../CommentsBox';
 
 let wrapper;
 
 beforeEach(() => {
-   wrapper = mount( < CommentsBox / > );
+   wrapper = mount(
+      <Root>
+         <CommentsBox/>
+      </Root>
+   );
 });
 
 afterEach(() => {
