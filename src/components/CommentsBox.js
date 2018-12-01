@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 class CommentsBox extends Component {
    state = {
@@ -15,6 +17,7 @@ class CommentsBox extends Component {
 
       // TODO - call an action creator
       // and save the comment
+      this.props.onSaveComment(this.state.comment);
 
       this.setState({ comment: '' });
    }
@@ -32,4 +35,12 @@ class CommentsBox extends Component {
    }
 }
 
-export default CommentsBox;
+const mapDispatchToProps = (dispatch) => {
+   return {
+      onSaveComment: (comment) => {
+         dispatch(actions.saveComment(comment))
+      }
+   }
+}
+
+export default connect(null, mapDispatchToProps)(CommentsBox);
