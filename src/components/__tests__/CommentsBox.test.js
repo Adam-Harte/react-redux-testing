@@ -18,9 +18,9 @@ afterEach(() => {
    wrapper.unmount();
 });
 
-it('should render a text area and a button', () => {
+it('should render a text area and a 2 buttons', () => {
    expect(wrapper.find('textarea').length).toEqual(1);
-   expect(wrapper.find('button').length).toEqual(1);
+   expect(wrapper.find('button').length).toEqual(2);
 })
 
 describe('the textarea', () => {

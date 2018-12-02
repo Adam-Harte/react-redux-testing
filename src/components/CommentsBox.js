@@ -29,6 +29,7 @@ class CommentsBox extends Component {
             <textarea value={this.state.comment} onChange={this.handleChange} />
             <div>
                <button>Submit</button>
+               <button className="fetch-comments" onClick={this.props.onFetchComments}>Fetch Comments</button>
             </div>
          </form>
       );
@@ -39,6 +40,9 @@ const mapDispatchToProps = (dispatch) => {
    return {
       onSaveComment: (comment) => {
          dispatch(actions.saveComment(comment))
+      },
+      onFetchComments: () => {
+         dispatch(actions.fetchComments())
       }
    }
 }
